@@ -18,7 +18,7 @@ package ch01기본알고리즘;
  * */
 
 
-public class 실습1_9_palin문자열_과제 {
+public class 실습1_과제1_palin문자열 {
 	
 	private static boolean isPalindrome(String s) { // charAt() 쓰면 편함...
 		int len = s.length();

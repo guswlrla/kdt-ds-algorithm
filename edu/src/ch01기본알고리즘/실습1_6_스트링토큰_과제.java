@@ -51,6 +51,7 @@ public class 실습1_6_스트링토큰_과제 {
         // 문자열 배열을 실수 배열로 변환하고 정렬 후 출력
         double[] sortedDoubleArray = convertSortToDouble(sortedStringArray);
         System.out.println("정렬 실수 배열:");
+       // 실습1_6_스트링토큰_과제 x = new 실습1_6_스트링토큰_과제();
         printDoubleArray(sortedDoubleArray);
     }
 }
