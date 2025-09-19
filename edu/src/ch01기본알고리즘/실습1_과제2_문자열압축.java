@@ -17,7 +17,7 @@ public class 실습1_과제2_문자열압축 {
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i < input.length(); i ++) {
 			if(input.charAt(i) == input.charAt(i+1)){
-				sb.insert(i+1, null);
+				
 			}
 		}
 		
