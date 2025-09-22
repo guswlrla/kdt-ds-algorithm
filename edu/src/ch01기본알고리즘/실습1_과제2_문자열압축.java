@@ -15,13 +15,21 @@ public class 실습1_과제2_문자열압축 {
 	
 	private static String compress(String input) {
 		StringBuilder sb = new StringBuilder();
-		for(int i = 0; i < input.length(); i ++) {
-			if(input.charAt(i) == input.charAt(i+1)){
-				
-			}
-		}
+		String cmpStr = new String(sb);
 		
-		return null;
+		int cnt = 1;
+		for(int i = 1; i < input.length(); i++) {
+			if(input.charAt(i) != input.charAt(i-1)) {
+				sb.append(input.charAt(i-1));
+				sb.append(cnt);
+				cnt = 1;
+			}
+			else cnt++;
+		}
+		sb.append(input.charAt(input.length() - 1));
+		sb.append(cnt);
+		
+		return cmpStr;
 	}
 
     public static void main(String[] args) {
