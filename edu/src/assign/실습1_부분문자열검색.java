@@ -8,18 +8,19 @@ package assign;
  * 
  * 패턴이 나타나는 인덱스를 반환
  */
-public class 실습1장_부분문자열검색 {
+public class 실습1_부분문자열검색 {
 
 	private static void searchSubstring(String text, String pattern) {
-		// TODO Auto-generated method stub
-
+		while(text.length() > 0) {
+			System.out.println("[출력 : " + text.indexOf(pattern) + ", " + text.indexOf(pattern) + "]");
+		}
 	}
 
 	public static void main(String[] args) {
 		String text = "ababcabcabababd";
 		String pattern = "ababd";
 
-		searchSubstring(text, pattern);
+//		searchSubstring(text, pattern);
 		text = "abxabcabcabyabcaby";
 		pattern = "abcaby";
 		searchSubstring(text, pattern);
