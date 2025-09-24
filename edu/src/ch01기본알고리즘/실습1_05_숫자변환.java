@@ -2,7 +2,7 @@ package ch01기본알고리즘;
 
 import java.util.Arrays;
 
-public class 실습1_5_숫자변환_과제 {
+public class 실습1_05_숫자변환 {
 /*
  * split(" ")
  * parseInt(stringArray[i])

@@ -11,16 +11,19 @@ package assign;
 public class 실습1_부분문자열검색 {
 
 	private static void searchSubstring(String text, String pattern) {
-		while(text.length() > 0) {
-			System.out.println("[출력 : " + text.indexOf(pattern) + ", " + text.indexOf(pattern) + "]");
+		int pos = text.indexOf(pattern); // indexOf() - 특정 문자나 문자열이 앞에서부터 처음 발견되는 인덱스를 반환
+		while(pos != -1) { // 찾지 못했을 경우 -1을 반환
+			System.out.println(pos);
+			pos = text.indexOf(pattern, pos+1); 
 		}
+		
 	}
 
 	public static void main(String[] args) {
 		String text = "ababcabcabababd";
 		String pattern = "ababd";
 
-//		searchSubstring(text, pattern);
+		searchSubstring(text, pattern);
 		text = "abxabcabcabyabcaby";
 		pattern = "abcaby";
 		searchSubstring(text, pattern);

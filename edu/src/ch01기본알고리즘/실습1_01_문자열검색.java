@@ -5,7 +5,7 @@ package ch01기본알고리즘;
  * 
  */
 
-public class 실습1_1_문자열검색_과제 {
+public class 실습1_01_문자열검색 {
 	public static void main(String[] args) {
 		String address[] = { "경기도 남양주 별내동", "서울시 영등포구 당산동", "부산시 동래구 온천동144", "충남 천안시 서북구222", "부산시 연제구 연산동",
 				"서울시 송파구 석촌동91", "전북 부안군 부안읍", "부산시 금정구 장전동63" };

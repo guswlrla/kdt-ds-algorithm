@@ -11,7 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class 실습1_7_파일데이터_과제 {
+public class 실습1_07_파일데이터 {
     // 파일을 읽어 각 라인을 공백으로 분리하여 정렬하는 함수
     public static String[] readSortFromFile(String filename) {
     	// 저장할 데이터

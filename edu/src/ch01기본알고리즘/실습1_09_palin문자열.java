@@ -18,7 +18,7 @@ package ch01기본알고리즘;
  * */
 
 
-public class 실습1_과제1_palin문자열 {
+public class 실습1_09_palin문자열 {
 	
 	private static boolean isPalindrome(String s) { // charAt() 쓰면 편함...
 		int len = s.length();
@@ -39,7 +39,7 @@ public class 실습1_과제1_palin문자열 {
 	private static boolean isPalindrome2(String s) {
 		int len = s.length();
 		for(int i = 0; i < len/2; i++) {
-			if(s.charAt(i) != s.charAt(len-1-i)) {
+			if(s.charAt(i) != s.charAt(len-1-i)) { // charAt() - String 타입의 데이터(문자열)에서 특정 문자를 char 타입으로 변환
 				return false;
 			}
 		}

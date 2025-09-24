@@ -3,7 +3,7 @@ package ch01기본알고리즘;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class 실습1_6_스트링토큰_과제 {
+public class 실습1_06_스트링토큰 {
 	
 /*
  * StringTokenizer(input), countTokens(), hasMoreTokens(), nextToken()

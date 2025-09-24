@@ -1,6 +1,6 @@
 package ch01기본알고리즘;
 
-public class 실습1_2문자열교체_과제 {
+public class 실습1_02_문자열교체 {
     // 서브스트링을 추가하는 함수
 	/*
 	 * concat(substring)

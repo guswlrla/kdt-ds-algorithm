@@ -11,7 +11,7 @@ package ch01기본알고리즘;
 * 내부 버퍼를 사용하여 문자열을 직접 수정할 수 있다.
 * 객체 자체를 변경하기 때문에 반복적인 문자열 조작에 효율적
 */
-public class 실습1_과제2_문자열압축 {
+public class 실습1_10_문자열압축 {
 	
 	private static String compress(String input) {
 		StringBuilder sb = new StringBuilder();

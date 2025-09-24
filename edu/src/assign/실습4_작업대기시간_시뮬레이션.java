@@ -1,6 +1,6 @@
 package assign;
 
-public class 실습4_5_작업대기시간_시뮬레이션 {
+public class 실습4_작업대기시간_시뮬레이션 {
 	/*
 	문제 예시: timeslot 기반의 작업 scheduling 시스템
 	문제 설명:
