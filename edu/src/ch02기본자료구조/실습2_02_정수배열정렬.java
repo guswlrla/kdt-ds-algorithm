@@ -24,7 +24,8 @@ public class 실습2_02_정수배열정렬 {
 		reverseSort(data); // 역순으로 재배치 - 정렬
 		showData("역순 정렬 후", data);
 		
-		sortData(data);
+		sortData(data); // 오름차순 정렬
+		showData("정렬", data);
 		
 		int realData[] = {5, 15, 99};
 		for (int newData: realData) {
@@ -41,6 +42,7 @@ public class 실습2_02_정수배열정렬 {
 
 	private static int[] reverseSort(int[] data) {
 		Arrays.sort(data);
+		reverse(data);
 		return data;
 	}
 
@@ -72,9 +74,12 @@ public class 실습2_02_정수배열정렬 {
 	 * 삽입된 값이 중간에 들어가는 알고리즘 구현하기
 	 * O(n) 알고리즘으로 구현 
 	 */
-	static int[] insertData(int []data, int value) { // insert되는 실수 값이 insert될 위치를 찾아 보다 큰 값은 우측으로 이동
-		int newData[] = new int[data.length+1];
-		
+	static int[] insertData(int []data, int value) { // insert되는 실수 값이 insert될 위치를 찾아, 큰 값은 우측으로 이동
+		int len = data.length;
+		int newData[] = new int[len + 1];
+		for(int i = 0; i < newData.length; i++) {
+			newData[i] = data[i];
+		}
 		return newData;
 	}
 }
