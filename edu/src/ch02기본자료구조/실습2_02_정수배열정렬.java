@@ -29,7 +29,7 @@ public class 실습2_02_정수배열정렬 {
 		
 		int realData[] = {5, 15, 99};
 		for (int newData: realData) {
-			int []result = insertData(data, newData); // 입력 실수보다 큰 숫자를 우측으로 이동
+			int result[] = insertData(data, newData); // 입력 실수보다 큰 숫자를 우측으로 이동
 			System.out.print("\n\n" + newData + " : ");
 			showData("실수 삽입 후", result);
 		}
@@ -77,8 +77,17 @@ public class 실습2_02_정수배열정렬 {
 	static int[] insertData(int []data, int value) { // insert되는 실수 값이 insert될 위치를 찾아, 큰 값은 우측으로 이동
 		int len = data.length;
 		int newData[] = new int[len + 1];
-		for(int i = 0; i < newData.length; i++) {
+		
+		int i = 0;
+		while(i < len && data[i] < value) {
 			newData[i] = data[i];
+			i++;
+		}
+		newData[i] = value;
+		
+		while(i < len) {
+			newData[i+1] = data[i];
+			i++;
 		}
 		return newData;
 	}

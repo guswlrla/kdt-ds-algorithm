@@ -15,7 +15,6 @@ public class 실습1_10_문자열압축 {
 	
 	private static String compress(String input) {
 		StringBuilder sb = new StringBuilder();
-		String cmpStr = new String(sb);
 		
 		int cnt = 1;
 		for(int i = 1; i < input.length(); i++) {
@@ -29,7 +28,7 @@ public class 실습1_10_문자열압축 {
 		sb.append(input.charAt(input.length() - 1));
 		sb.append(cnt);
 		
-		return cmpStr;
+		return sb.toString();
 	}
 
     public static void main(String[] args) {
