@@ -1,7 +1,7 @@
 //package assign;
 //
 //import java.util.Stack;
-//
+// 크기 줄여서 풀기, 큐 보면서 풀이
 //public class 실습5_2KnightTracking {
 //
 //	/*
@@ -117,6 +117,5 @@
 //		}
 //	}
 //}
-package assign;
 
 
