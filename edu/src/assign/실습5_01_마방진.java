@@ -42,6 +42,5 @@
 //		// 구현
 //	}
 //}
-package assign;
 
 

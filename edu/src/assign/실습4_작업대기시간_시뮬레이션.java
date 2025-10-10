@@ -1,34 +1,103 @@
 package assign;
 
+/*
+문제 예시: timeslot 기반의 작업 scheduling 시스템
+문제 설명:
+1. 리스트에 작업이 추가됨
+2-1. 테스트에선 시간 고정(3)
+2-2. 단, 실무에선 난수로 배정해서 변경할 것
+3. 각 작업은 주어진 time slot(3) 단위로 나눠서 처리
+4. if 작업이 완료되면, 큐에서 제거
+5. else 남은 작업시간을 가장 뒷부분에 추가
+6. 반복문이 끝나면(queue가 empty가 되면) 종료 
+
+제약 조건:
+1 ≤ T ≤ 10
+1 ≤ 작업의 개수 ≤ 100
+각 작업의 남은 시간은 1 이상 100 이하
+*/
+
+// 라운드 로빈
+// time slot : 한 번에 처리할 수 있는 작업량
 public class 실습4_작업대기시간_시뮬레이션 {
-	/*
-	문제 예시: timeslot 기반의 작업 scheduling 시스템
-	문제 설명:
-	어느 회사에서는 여러 작업이 동시에 들어오며, 각 작업의 처리 시간은 난수로 배정된다. 
-	각 작업은 주어진 time slot 단위로 나눠서 처리되며, 처리 중인 작업은 완료되지 않았더라도 
-	타임슬롯이 끝나면 큐의 마지막에 다시 대기해야 한다. 순서대로 돌아가며 타임슬롯을 할당하여 
-	작업을 처리하는 이 시스템에서, 작업이 끝나면 큐에서 제거되고 완료된 시간을 출력한다, 
-	그렇지 않으면 다음 타임슬롯에 다시 처리될 때까지 대기열의 끝으로 이동합니다.
+	static class Job {
+		String name;
+		int remainingTime;
 
-	조건:
-	각 작업에는 고유의 이름과 남은 작업 시간이 주어집니다.
-	타임슬롯(T)의 크기가 주어집니다.
-	각 작업은 타임슬롯 단위로 처리되며, 만약 작업이 완료되지 않으면 
-	남은 시간이 줄어들고 큐의 끝으로 이동합니다.
-	작업이 완료되면 큐에서 제거됩니다.
-	모든 작업이 완료될 때까지 반복적으로 처리합니다.
+		private Job(String name, int remainingTime) {
+			this.name = name;
+			this.remainingTime = remainingTime;
+		}
+	}
+	
+	static class CircularQueue {
+		Job[] queue;
+		int front;
+		int rear;
+		int size;
+		int capacity;
+		
+		public CircularQueue(int capacity) {
+			this.capacity = capacity;
+			this.queue = new Job[capacity];
+			this.front = 0;
+			this.rear = -1;
+			this.size = 0;
+		}
+		
+		boolean isEmpty() {
+			return size == 0;
+		}
+		
+		boolean isFull() {
+			return size == capacity;
+		}
+		
+		private void enqueue(Job job) {
+			if(isFull()) {
+				System.out.println("큐가 가득 찼습니다.");
+				return;
+			}
+			rear = (rear + 1) % capacity;
+			queue[rear] = job;
+			size++;
+		}
+		
+		Job dequeue() {
+			if(isEmpty()) {
+				return null;
+			}
+			Job job = queue[front];
+			front = (front + 1) % capacity;
+			size--;
+			return job;
+		}
+	}
 
-	입력 형식:
-	첫 번째 줄에 타임슬롯 크기 T가 주어집니다.
-	두 번째 줄에는 각 작업의 이름과 남은 시간이 (작업 이름, 시간)의 형식으로 주어집니다.
-
-	출력 형식:
-	각 타임슬롯에서 처리된 작업의 이름과 남은 시간을 출력합니다.
-	작업이 완료된 경우 "작업 완료"를 출력합니다.
-
-	제약 조건:
-	1 ≤ T ≤ 10
-	1 ≤ 작업의 개수 ≤ 100
-	각 작업의 남은 시간은 1 이상 100 이하입니다.
-	*/
+	public static void main(String[] args) {
+		System.out.println("=== 테스트 케이스1 (계산됨) ===");
+		int timeSlot = 3;
+		String[][] jobData = { { "A", "10" }, { "B", "5" }, { "C", "8" } };
+		
+		CircularQueue queue = new CircularQueue(100);
+		for(String[] data : jobData) {
+			queue.enqueue(new Job(data[0], Integer.parseInt(data[1])));
+		}
+		int currentTime = 0;
+		while (!queue.isEmpty()) {
+			Job currentJob = queue.dequeue();
+			
+			int processTime = Math.min(timeSlot, currentJob.remainingTime);
+			currentJob.remainingTime -= processTime;
+			currentTime += processTime;
+			
+			System.out.println("처리 중 : " + currentJob.name + ", 남은 시간 : " + currentJob.remainingTime);
+			
+			if(currentJob.remainingTime == 0) {
+				System.out.println(currentJob.name + " 완료, " + "시간 " + currentTime);
+			} else {
+				queue.enqueue(currentJob);
+			}
+		}
+	}
 }
