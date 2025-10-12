@@ -33,17 +33,47 @@ public class 실습2_03_다차원배열 {
 		int[][] F = transposeMatrix(B);
 		System.out.println("F[3][2] = ");
 		showData("행렬 F", F);
-//		C = multiplyMatrixTransposed(A, F);
-//		showData("행렬 곱셈 결과-전치행렬 사용", C);
-//		boolean result = equals(A, C);
-//		if (result)
-//			System.out.println("행렬 A,C는 equal이다");
-//		else
-//			System.out.println("행렬 A,C는 equal 아니다");
+		C = multiplyMatrixTransposed(A, F);
+		showData("행렬 곱셈 결과 - 전치행렬 사용", C);
+		boolean result = equals(A, C);
+		if (result)
+			System.out.println("행렬 A,C는 equal이다");
+		else
+			System.out.println("행렬 A,C는 equal 아니다");
 	}
 
-	private static int[][] transposeMatrix(int[][] b) {
-		return null;
+	private static boolean equals(int[][] a, int[][] c) {
+		if (a.length != c.length) return false;
+		if (a[0].length != c[0].length) return false;
+		
+		for(int i = 0; i < a.length; i++) {
+			for(int j = 0; j < a[0].length; j++) {
+				if (a[i][j] != c[i][j]) return false;
+			}
+		}
+		return true;
+	}
+
+	private static int[][] multiplyMatrixTransposed(int[][] a, int[][] f) {
+		int c2[][] = new int[a.length][f.length];
+		for(int i = 0; i < a.length; i++) {
+			for(int j = 0; j < f.length; j++) {
+				for(int k = 0; k < a[0].length; k++) {
+					c2[i][j] += a[i][k] * f[j][k];
+				}
+			}
+		}
+		return c2;
+	}
+
+	private static int[][] transposeMatrix(int[][] b) { // 전치행렬
+		int f[][] = new int[b[0].length][b.length];
+		for(int i = 0; i < b[0].length; i++) {
+			for(int j = 0; j < b.length; j++) {
+				f[i][j] = b[j][i];
+			}
+		}
+		return f;
 	}
 
 	private static int[][] multiplyMatrix(int[][] a, int[][] b) {
