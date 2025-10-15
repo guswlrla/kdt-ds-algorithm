@@ -1,4 +1,4 @@
-package assign;
+package 실습과제;
 
 import java.util.ArrayList;
 import java.util.Collections;

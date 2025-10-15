@@ -1,4 +1,4 @@
-package assign;
+package 실습과제;
 
 /*
 문제 예시: timeslot 기반의 작업 scheduling 시스템

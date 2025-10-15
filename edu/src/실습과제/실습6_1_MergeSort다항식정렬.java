@@ -1,5 +1,5 @@
 //package assign;
-//
+// linkedList로 풀기!!!!!!!!!!!!!!
 ///*
 // * 6장 구현과제3
 // */
@@ -121,3 +121,6 @@
 //		System.out.println(" result = " + result);
 //	}
 //}
+package 실습과제;
+
+
