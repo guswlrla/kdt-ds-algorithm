@@ -24,7 +24,7 @@ public class 실습2_06_스트링배열정렬 {
 		String arr[] = new String[len + 1];
 		
 		int i = 0;
-		while(data[i].compareTo(string) <= 0) { // 
+		while(data[i].compareTo(string) <= 0) { 
 			arr[i] = data[i];
 			i++;
 		}
