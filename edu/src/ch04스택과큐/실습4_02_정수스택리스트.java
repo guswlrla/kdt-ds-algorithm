@@ -44,7 +44,9 @@ class IntStack4 {
 	// 생성자(constructor)
 	public IntStack4(int maxlen) {
 		try {
-			
+			capacity = maxlen;
+			top = 0;
+			stk = new ArrayList<>(capacity);
 		} catch (OutOfMemoryError e) { // 생성할 수 없음
 			capacity = 0;
 		}
@@ -72,28 +74,28 @@ class IntStack4 {
 	public int peek() throws EmptyIntStackException {
 		if (isEmpty()) // 스택이 빔
 			throw new EmptyIntStackException("peek: stack empty");
-		return top;
+		return stk.get(size()-1);
 	}
 
 	// 스택을 비움
 	public void clear() throws EmptyIntStackException {
 		/*
-		 * stack을 empty로 만들어야 한다. stack이 empty일 때 clear()가 호출된 예외 발생해야 한다 pop()으로 구현하지
-		 * 않고 대신에 while 문으로 remove()를 반복 실행한다
+		 * stack을 empty로 만들어야 한다. 
+		 * stack이 empty일 때 clear()가 호출된 예외 발생해야 한다 pop()으로 구현하지 않고 대신에 while 문으로 remove()를 반복 실행한다
 		 */
 		if (isEmpty()) // 스택이 빔
-			throw new EmptyIntStackException("peek: stack empty");
+			throw new EmptyIntStackException("clear: stack empty");
 		else {
-			int i = 0;
-			while(stk.size() > 0) {
-				stk.remove(i);
-				i++;
+			while(!stk.isEmpty()) {
+				stk.remove(stk.size()-1);
+				top--;
 			}
 		}
 	}
 
 	// 스택에서 x를 찾아 인덱스(없으면 –1)를 반환
 //	public int indexOf(int x) {
+//
 //	}
 
 	// 스택의 크기를 반환
@@ -127,7 +129,7 @@ class IntStack4 {
 	}
 }
 
-public class 실습4_01_정수스택리스트 {
+public class 실습4_02_정수스택리스트 {
 	public static void main(String[] args) {
 		Scanner stdIn = new Scanner(System.in);
 		IntStack4 s = new IntStack4(64); // 최대 64 개를 푸시할 수 있는 스택
@@ -144,8 +146,8 @@ public class 실습4_01_정수스택리스트 {
 			int x;
 			switch (menu) {
 			case 1: // 푸시
-				System.out.print("데이터: ");
 				x = rnd.nextInt(10);
+				System.out.print("푸시한 데이터는 " + x + "입니다.");
 				try {
 					s.push(x);
 				} catch (IntStack4.OverflowIntStackException e) {

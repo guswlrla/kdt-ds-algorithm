@@ -22,7 +22,7 @@ package ch04스택과큐;
 */
 import java.util.*;
 
-public class 실습4_4_스택응용_괄호매칭검사 {
+public class 실습4_08_스택응용_괄호매칭검사 {
 
 	public static boolean isValid(String s) {
 		/*
