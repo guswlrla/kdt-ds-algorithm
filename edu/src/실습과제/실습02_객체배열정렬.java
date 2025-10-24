@@ -50,7 +50,7 @@ class PhyscData2 implements Comparable<PhyscData2>{
 	}
 }
 
-public class 실습2_객체배열정렬 {
+public class 실습02_객체배열정렬 {
 	// 정렬 전
 	private static void showData(String str, PhyscData2[] data) {
 		// 반복문을 사용해서 출력

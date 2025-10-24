@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * 
  * 패턴이 나타나는 인덱스를 반환
  */
-public class 실습1_부분문자열검색 {
+public class 실습01_부분문자열검색 {
 
 	private static void searchSubstring(String text, String pattern) {
 		ArrayList<Integer> val = new ArrayList<>();

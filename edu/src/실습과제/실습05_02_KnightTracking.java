@@ -14,7 +14,7 @@ class Offsets4 {
 	}
 }
 // 크기 줄여서 풀기, 큐 보면서 풀이
-public class 실습5_02_KnightTracking {
+public class 실습05_02_KnightTracking {
 	/*
 	 * Knight's Tour 문제는 체스판에서 나이트(Knight) 말이 모든 체스판의 칸을 한 번씩만 방문하면서 체스판의 모든 방을 방문하면 종료.
 	 * 나이트는 체스에서 "L" 모양으로 움직이는데, 두 칸 직진하고 한 칸 옆으로 이동하는 방식입니다. 임의 위치에서 시작

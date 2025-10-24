@@ -19,7 +19,7 @@ package 실습과제;
 
 // 라운드 로빈
 // time slot : 한 번에 처리할 수 있는 작업량
-public class 실습4_작업대기시간_시뮬레이션 {
+public class 실습04_작업대기시간_시뮬레이션 {
 	static class Job {
 		String name;
 		int remainingTime;

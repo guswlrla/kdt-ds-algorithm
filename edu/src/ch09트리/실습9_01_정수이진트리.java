@@ -31,152 +31,7 @@
 //	}
 //}
 //
-//class ObjectStack5{
-//	//--- 실행시 예외: 스택이 비어있음 ---//
-//	// generic class는 Throwable을 상속받을 수 없다 - 지원하지 않는다
-//	public class EmptyGenericStackException extends Exception {
 //
-//	}
-//
-//	//--- 실행시 예외: 스택이 가득 참 ---//
-//	public class OverflowGenericStackException extends RuntimeException {
-//
-//	}
-//
-//    private List<TreeNode5> data;  // list를 사용: 배열은 크기를 2배로 늘리는 작업 필요 
-//	//private List<T> data;
-//	private int capacity; // 스택의 크기
-//	private int top; // 스택 포인터
-//
-////--- 생성자(constructor) ---//
-//	public ObjectStack5(int capacity) {
-//
-//	}
-//
-////--- 스택에 x를 푸시 ---//
-//	public boolean push(TreeNode5 x) throws OverflowGenericStackException {
-//
-//
-//	}
-//
-////--- 스택에서 데이터를 팝(정상에 있는 데이터를 꺼냄) ---//
-//	public TreeNode5 pop() throws EmptyGenericStackException  {
-//
-//	}
-//
-////--- 스택에서 데이터를 피크(peek, 정상에 있는 데이터를 들여다봄) ---//
-//	public TreeNode5 peek() throws EmptyGenericStackException  {
-//
-//	}
-//
-////--- 스택을 비움 ---//
-//	public void clear() {
-//		top = 0;
-//	}
-//
-////--- 스택에서 x를 찾아 인덱스(없으면 –1)를 반환 ---//
-//	public int indexOf(TreeNode5 x) {
-//
-//	}
-//
-////--- 스택의 크기를 반환 ---//
-//	public int getCapacity() {
-//		return capacity;
-//	}
-//
-////--- 스택에 쌓여있는 데이터 갯수를 반환 ---//
-//	public int size() {
-//		return top;
-//	}
-//
-////--- 스택이 비어있는가? ---//
-//	public boolean isEmpty() {
-//
-//	}
-//
-////--- 스택이 가득 찼는가? ---//
-//	public boolean isFull() {
-//
-//	}
-//
-////--- 스택 안의 모든 데이터를 바닥 → 꼭대기 순서로 출력 ---//
-//	public void dump() {
-//
-//	}
-//}
-////정수를 저정하는 이진트리 만들기 실습
-//class ObjectQueue5 {
-//    private TreeNode5[] que;//큐는 배열로 구현
-//	//private List<Integer> que; // 수정본
-//	private int capacity; // 큐의 크기
-//	private int front; // 맨 처음 요소 커서
-//	private int rear; // 맨 끝 요소 커서
-//
-////--- 실행시 예외: 큐가 비어있음 ---//
-//	public class EmptyQueueException extends RuntimeException {
-//
-//	}
-//
-////--- 실행시 예외: 큐가 가득 찼음 ---//
-//	public class OverflowQueueException extends RuntimeException {
-//
-//	}
-//
-////--- 생성자(constructor) ---//
-//public ObjectQueue5(int maxlen) {
-//
-//}
-//
-////--- 큐에 데이터를 인큐 ---//
-//	public int enque(TreeNode5 x) throws OverflowQueueException {
-//
-//	}
-//
-////--- 큐에서 데이터를 디큐 ---//
-//	public TreeNode5 deque() throws EmptyQueueException {
-//
-//	}
-//
-////--- 큐에서 데이터를 피크(프런트 데이터를 들여다봄) ---//
-//	public TreeNode5 peek() throws EmptyQueueException {
-//
-//	}
-//
-////--- 큐를 비움 ---//
-//	public void clear() {
-//		num = front = rear = 0;
-//	}
-//
-////--- 큐에서 x를 검색하여 인덱스(찾지 못하면 –1)를 반환 ---//
-//	public int indexOf(TreeNode5 x) {
-//	
-//	}
-//
-////--- 큐의 크기를 반환 ---//
-//	public int getCapacity() {
-//		return capacity;
-//	}
-//
-////--- 큐에 쌓여 있는 데이터 개수를 반환 ---//
-//	public int size() {
-//		return num;
-//	}
-//
-////--- 큐가 비어있는가? ---//
-//	public boolean isEmpty() {
-//
-//	}
-//
-////--- 큐가 가득 찼는가? ---//
-//	public boolean isFull() {
-//
-//	}
-//
-////--- 큐 안의 모든 데이터를 프런트 → 리어 순으로 출력 ---//
-//	public void dump() {
-//
-//	}
-//}
 //class Tree5 {
 //	TreeNode5 root;
 //
@@ -218,7 +73,7 @@
 //	 * preorder: x - Tl - Tr 순서로 방문
 //	 * postorder: Tl - Tr - x 순서로 방문
 //	 */
-//	void inorder(TreeNode5 CurrentNode) {//inorder traversal을 구현하는 recursive function - workhorse라고 부름
+//	void inorder(TreeNode5 CurrentNode) { // inorder traversal을 구현하는 recursive function - workhorse라고 부름
 //		if (CurrentNode != null) {
 //			inorder(CurrentNode.LeftChild);
 //			System.out.print(" " + CurrentNode.data);
@@ -243,7 +98,7 @@
 //	}
 //
 //	void NonrecInorder()//void Tree5::inorder(TreeNode5 *CurrentNode)와 비교
-//	//stack을 사용한 inorder 출력
+//	// stack을 사용한 inorder 출력
 //	//non-recursive 코드를 이해하는 학습 필요
 //	{
 //		ObjectStack5 s = new ObjectStack5(20);
@@ -257,7 +112,6 @@
 //				try {
 //					CurrentNode = s.pop();
 //				} catch (Ch9_Tree.ObjectStack5.EmptyGenericStackException e) {
-//					// TODO Auto-generated catch block
 //					e.printStackTrace();
 //				}
 //				System.out.println(" " + CurrentNode.data);
@@ -274,7 +128,7 @@
 //		Queue<Integer> que = new LinkedList<>();
 //		
 //	}
-//
+
 //	boolean insert(int x) {// binary search tree를 만드는 입력 : left subtree < 노드 x < right subtree
 //		//inorder traversal시에 정렬된 결과가 나와야 한다
 //		TreeNode5 newNode = new TreeNode5(x);
@@ -304,14 +158,28 @@
 //		return true;
 //	}
 //
-//	boolean delete(int num) {//binary search tree에서 임의 값을 갖는 노드를 찾아 삭제한다.
-//		//난이도 중상
-//		//삭제 대상이 leaf node인 경우, non-leaf node로 구분하여 구현한다 
+//	boolean delete(int num) { // binary search tree에서 임의 값을 갖는 노드를 찾아 삭제한다.
+//		// 난이도 중상
+//		// 삭제 대상이 leaf node인 경우, non-leaf node로 구분하여 구현한다 
 //		TreeNode5 p = root, q = null, parent = null;
 //		int branchMode = 0; // 1은 left, 2는 right
-//		
+//		while(p != null) {
+//			q = p;
+//			if(num < p.data) {
+//				branchMode = 0;
+//				p = p.LeftChild;
+//			} else if(num > p.data) {
+//				branchMode = 1;
+//				p = p.RightChild;
+//			} else {
+//				if(branchMode == 0)
+//					q.LeftChild = null;
+//				else
+//					q.RightChild = null;
+//			}
+//			
+//		}
 //		return false;
-//
 //	}
 //
 //	boolean search(int num) {//num 값을 binary search tree에서 검색
@@ -319,7 +187,7 @@
 //		
 //	}
 //}
-//
+
 //public class 실습9_01_정수이진트리 {
 //	enum Menu {
 //		Add("삽입"), Delete("삭제"), Search("검색"), InorderPrint("정렬출력"), 
@@ -344,7 +212,7 @@
 //		}
 //	}
 //
-//	// --- 메뉴 선택 ---//
+	// --- 메뉴 선택 ---//
 //	static Menu SelectMenu() {
 //		Scanner stdIn = new Scanner(System.in);
 //		int key;

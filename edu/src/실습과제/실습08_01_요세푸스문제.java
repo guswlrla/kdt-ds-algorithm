@@ -55,7 +55,7 @@ class CircularLinkedList {
 	public void showList() {}
 }
 
-public class 실습8_01_요세푸스문제 {
+public class 실습08_01_요세푸스문제 {
 	public static void main(String[] args) {
 		// 출력 : 조세푸스 (7, 3) 문제
 		// singleLinkedList = new SinglyLinkedList();

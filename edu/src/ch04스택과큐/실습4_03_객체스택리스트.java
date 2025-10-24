@@ -98,7 +98,7 @@ class objectStack {
 		return top;
 	}
 
-//--- 스택이 비어있는가? ---//
+// 스택이 비어있는가? ---//
 	public boolean isEmpty() {
 		return top <= 0;
 	}

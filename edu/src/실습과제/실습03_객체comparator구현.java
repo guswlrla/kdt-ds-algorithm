@@ -34,7 +34,7 @@ class Student {
 	}
 }
 
-public class 실습3_객체comparator구현 {
+public class 실습03_객체comparator구현 {
 	private static void show(Student[] arr) {
 		System.out.println("=== 정렬 전 학생 목록 ===");
 		for(Student d : arr) {
